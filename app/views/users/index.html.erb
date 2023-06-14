@@ -1,0 +1,32 @@
+<h1 class="text-center text-indigo-500 text-2xl my-4 font-sans font-bold">Users</h1>
+<div class="mx-auto text-center my-4">
+  <%= link_to "New user", new_user_path, class: "text-lg p-3 bg-violet-400 hover:bg-violet-500 text-white rounded-3xl" %>
+</div>
+<table class="mx-auto text-center border-collapse border-2 border-slate-400 bg-sky-50 hover:bg-sky-100"> 
+  <tr class="border border-slate-300">
+    <th class="border border-slate-300 p-3">Index</th>
+    <th class="border border-slate-300 p-3">Avatar</th>
+    <th class="border border-slate-300">Username</th>
+    <th class="border border-slate-300">Email</th>
+    <th class="border border-slate-300">First Name</th>
+    <th class="border border-slate-300">Last Name</th>
+    <th class="border border-slate-300">Phone Number</th>
+    <th class="border border-slate-300">Action</th>
+  </tr>
+
+  <% @users.each_with_index do |user,inx| %>
+    <tr>
+      <td class="border border-slate-300 p-3"><%= inx+1 %></td>
+      <td class="border border-slate-300 p-3"><%= image_tag user.avatar.variant(:thumb) %></td>
+      <td class="border border-slate-300 p-3"><%= user.username %></td>
+      <td class="border border-slate-300 p-3"><%= user.email %></td>
+      <td class="border border-slate-300 p-3"><%= user.firstname %></td>
+      <td class="border border-slate-300 p-3"><%= user.lastname %></td>
+      <td class="border border-slate-300 p-3 oldstyle-nums"><%= user.phonenumber %></td>
+      <td class="border border-slate-300 p-3"><%= link_to 'Show', user, class: "p-2 bg-emerald-400 hover:bg-emerald-500 text-white rounded-xl" %> 
+        <%= link_to 'Edit', edit_user_path(user), class: "p-2 bg-amber-400 hover:bg-amber-500 text-white rounded-xl" %>
+        <%= link_to "Destroy", user_path(user), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "p-2 bg-red-500 hover:bg-red-600 text-white rounded-xl" %>
+      </td>
+    </tr>
+<% end %>  
+</table>
