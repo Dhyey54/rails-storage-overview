@@ -37,7 +37,7 @@ gem "redis", "~> 4.0"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -49,7 +49,7 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -73,3 +73,13 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Use foreman to Manage Procfile-based applications
+gem "foreman", "~> 0.87.2"
+
+# Use ruby-vips for using libvips image processing
+gem "ruby-vips"
+
+gem "pry", "~> 0.14.2"
+
+gem "pry-remote", "~> 0.1.8"
