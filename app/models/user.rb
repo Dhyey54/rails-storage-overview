@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar do |attachment|
     attachment.variant :thumb, resize_to_limit: [200,200]
-    attachment.variant :profile, resize_to_limit: [800,800]
+    attachment.variant :profile, resize_to_limit: [500,500]
   end
 
   validates :password, confirmation: true

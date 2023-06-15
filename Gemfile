@@ -74,6 +74,8 @@ group :test do
   gem "webdrivers"
 end
 
+# Use foreman to Manage Procfile-based applications
 gem "foreman", "~> 0.87.2"
 
+# Use ruby-vips for using libvips image processing
 gem "ruby-vips"
