@@ -79,3 +79,7 @@ gem "foreman", "~> 0.87.2"
 
 # Use ruby-vips for using libvips image processing
 gem "ruby-vips"
+
+gem "pry", "~> 0.14.2"
+
+gem "pry-remote", "~> 0.1.8"

@@ -16,8 +16,7 @@ class UsersController < ApplicationController
       flash[:success] = "User Created Successfully"
       redirect_to users_path
     else
-      flash[:error] = "Error Occured"
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +28,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:error] = "Error Occured"
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

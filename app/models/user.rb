@@ -6,5 +6,18 @@ class User < ApplicationRecord
     attachment.variant :profile, resize_to_limit: [500,500]
   end
 
-  validates :password, confirmation: true
+  validates :username, :email, :firstname, :lastname, :phonenumber, presence: true
+  validates :password, presence: true, confirmation: true
+
+  validate :validate_image
+
+  private
+
+  def validate_image
+    if avatar.attached?
+      if !avatar.blob.content_type.in?(%w[image/jpeg image/png])
+        errors.add(:avatar, "Add Only JPEG or PNG files")
+      end
+    end
+  end
 end

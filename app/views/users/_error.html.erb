@@ -1,7 +1,9 @@
-<div class="w-75 bg-secondary bg-opacity-25 shadow rounded">
-  <ul class="text-danger">
-    <% @user.errors.each do |error| %>
-      <li><%= error.full_message %></li>
-    <% end %>
-  </ul>
-</div>
+<% if @user.errors.any? %>
+  <div class="transition duration-300 ease-in-out bg-red-200 border border-red-600 shadow-2xl hover:transition-shadow hover:shadow-none rounded">
+    <ul class="text-black p-3 list-inside list-disc">
+      <% @user.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
